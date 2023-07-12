@@ -24,30 +24,30 @@
         </div>
       </div>
     </div>
-    <div class="dashboard_statistics_cards__container">
-      <div class="dashboard_statistics__container dashboard__card">
-        <div class="dashboard_statistics_title__container">
-          <span>Gastos por Categoria</span>
-        </div>
-        <div class="dashboard_statistics__list">
-          <div class="dashboard_statistics_list__item" *ngFor="let statisticsByCategory of valuesByCategories">
-            <div class="dashboard_statistics_list_item__title">
-              <div class="dashboard_statistics_list_item__icon icon__size_l icon__redounded"
-                   [style.background-color]="statisticsByCategory.color"
-              >
-                <mat-icon>
-                  {{ statisticsByCategory.icon }}
-                </mat-icon>
-              </div>
-              {{ statisticsByCategory.description }}
+  </div>
+  <div class="dashboard_statistics_cards__container">
+    <div class="dashboard_statistics__container dashboard__card">
+      <div class="dashboard_statistics_title__container">
+        <span>Gastos por Categoria</span>
+      </div>
+      <div class="dashboard_statistics__list">
+        <div class="dashboard_statistics_list__item" *ngFor="let statisticsByCategory of valuesByCategories">
+          <div class="dashboard_statistics_list_item__title">
+            <div class="dashboard_statistics_list_item__icon icon__size_l icon__redounded"
+                 [style.background-color]="statisticsByCategory.color"
+            >
+              <mat-icon>
+                {{ statisticsByCategory.icon }}
+              </mat-icon>
             </div>
-
-            {{ statisticsByCategory.value | currency : 'R$ ' }}
+            {{ statisticsByCategory.description }}
           </div>
+
+          {{ statisticsByCategory.value | currency : 'R$ ' }}
         </div>
       </div>
-      <div class="dashboard_cards__container dashboard__card">
-      </div>
+    </div>
+    <div class="dashboard_cards__container dashboard__card">
     </div>
   </div>
 </div>
