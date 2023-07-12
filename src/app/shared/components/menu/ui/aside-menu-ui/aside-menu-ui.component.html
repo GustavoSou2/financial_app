@@ -1,0 +1,21 @@
+<div id="aside_menu" [ngClass]="{ 'menu__hidden': menuHideState }">
+  <span class="aside_menu__title">
+    <span class="aside_menu_title__text">Menu</span>
+    <div class="aside_menu_title__btn_hide" (click)="setMenuHideState()">
+      <mat-icon *ngIf="menuHideState">keyboard_double_arrow_right</mat-icon>
+      <mat-icon *ngIf="!menuHideState">keyboard_double_arrow_left</mat-icon>
+    </div>
+  </span>
+    <ul class="aside_menu__list">
+      <li *ngFor="let item of menu">
+        <label class="aside_menu_list__item" [ngClass]="{ 'item_activated': item.activated }" >
+          <div class="aside_menu_list_item__icon">
+            <mat-icon>{{item.icon}}</mat-icon>
+          </div>
+          <span class="aside_menu_list_item__description">{{item.description}}</span>
+
+          <input type="radio" class="hidden" name="menu--item" value="true" [(ngModel)]="item.activated" [checked]="item.activated" (click)="clearMenuList(item.url)">
+        </label>
+      </li>
+  </ul>
+</div>

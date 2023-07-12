@@ -1,0 +1,54 @@
+<div id="dashboard">
+  <div class="dashboard__cards_balance__statistics">
+    <div class="dashboard_cards_balance__container">
+      <div class="dashboard_cards_balance__welcome">
+        <span class="dashboard_cards_balance_welcome__day">
+          Boa noite,
+        </span>
+        <span class="dashboard_cards_balance_welcome__username">Gustavo Souza
+         <span class="dashboard_cards_balance_welcome_day__emoji">
+            👋
+          </span>
+        </span>
+      </div>
+      <hr>
+      <div class="dashboard_cards_balance_container__list">
+        <div class="dashboard_cards_balance__item" *ngFor="let balance of balances" [ngClass]="balance.descriptionCode">
+          <div class="dashboard_cards_balance_item__detail">
+            <div class="dashboard_cards_balance_item_detail__icon">
+              <mat-icon>{{ balance.icon }}</mat-icon>
+            </div>
+            <span class="dashboard_cards_balance_item_detail__description">{{ balance.description }}</span>
+          </div>
+          <div class="dashboard_cards_balance_item__value">{{ balance.signal }} {{ balance.value | currency : 'R$ ' }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard_statistics_cards__container">
+      <div class="dashboard_statistics__container dashboard__card">
+        <div class="dashboard_statistics_title__container">
+          <span>Gastos por Categoria</span>
+        </div>
+        <div class="dashboard_statistics__list">
+          <div class="dashboard_statistics_list__item" *ngFor="let statisticsByCategory of valuesByCategories">
+            <div class="dashboard_statistics_list_item__title">
+              <div class="dashboard_statistics_list_item__icon icon__size_l icon__redounded"
+                   [style.background-color]="statisticsByCategory.color"
+              >
+                <mat-icon>
+                  {{ statisticsByCategory.icon }}
+                </mat-icon>
+              </div>
+              {{ statisticsByCategory.description }}
+            </div>
+
+            {{ statisticsByCategory.value | currency : 'R$ ' }}
+          </div>
+        </div>
+      </div>
+      <div class="dashboard_cards__container dashboard__card">
+      </div>
+    </div>
+  </div>
+</div>
+

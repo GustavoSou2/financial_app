@@ -1,0 +1,215 @@
+@import './src/assets/scss/global.scss';
+
+.dashboard__card {
+  border: 1px solid #{$black-100--color}20;
+  border-radius: 6px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-white-300--color;
+}
+
+hr {
+  width: 100%;
+  border: 0.5px solid #efefef;
+  margin: 0 auto;
+}
+
+#dashboard {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  .dashboard__cards_balance__statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: max-content;
+
+
+    .dashboard_cards_balance__container {
+      height: 100%;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      justify-content: space-around;
+
+
+
+      .dashboard_cards_balance__welcome {
+        padding: 0 32px;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.3rem;
+
+        .dashboard_cards_balance_welcome__day {
+          font-size: 1.2rem;
+          color: $black-100--color;
+
+          .dashboard_cards_balance_welcome_day__emoji {
+            font-size: 2.1rem;
+          }
+        }
+
+        .dashboard_cards_balance_welcome__username {
+          font-size: 1.5rem;
+          font-weight: bold;
+          font-family: Arial ;
+        }
+      }
+
+      .dashboard_cards_balance_container__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .dashboard_cards_balance__item {
+        width: 30%;
+        min-width: 220px;
+        height: 100%;
+        flex: 1 1 30%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 6px;
+        border: 1px solid #{$black-100--color}20;
+        padding: 30px 20px;
+        position: relative;
+        justify-content: space-between;
+        background-color: $primary-white-300--color;
+
+        .dashboard_cards_balance_item__value {
+          font-size: 2rem;
+          font-weight: 500;
+          font-family: Arial;
+          text-align: right;
+        }
+
+        .dashboard_cards_balance_item__detail {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          color: #{$black-100--color}95;
+
+          .dashboard_cards_balance_item_detail__icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        &.BALANCE {
+          .dashboard_cards_balance_item__detail {
+            .dashboard_cards_balance_item_detail__icon {
+              background-color: #{$BALANCE}50;
+              color: $BALANCE;
+            }
+          }
+        }
+
+        &.RECEIVED {
+          .dashboard_cards_balance_item__value {
+            color: $RECEIVED ;
+          }
+
+          .dashboard_cards_balance_item__detail {
+            .dashboard_cards_balance_item_detail__icon {
+              background-color: #{$RECEIVED}50;
+              color: $RECEIVED;
+            }
+          }
+        }
+
+        &.EXPENSE {
+          .dashboard_cards_balance_item__value {
+            color: $EXPENSE ;
+          }
+
+          .dashboard_cards_balance_item__detail {
+            .dashboard_cards_balance_item_detail__icon {
+              background-color: #{$EXPENSE}50;
+              color: $EXPENSE;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dashboard_statistics_cards__container {
+    width: 96%;
+    min-height: 300px;
+    justify-content: space-around;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: max-content;
+
+    .dashboard_statistics__container {
+      flex: 1 1 45%;
+      display: flex;
+      gap: 15px;
+
+      .dashboard_statistics_title__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        gap: 10px;
+
+        .dashboard_statistics_title__icon {
+          background-color: #ff9f4350;
+          color: #ff9f43;
+        }
+      }
+
+      .dashboard_statistics__list {
+        display: flex;
+        flex-direction: column;
+
+        .dashboard_statistics_list__item {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          color: $black-300--color;
+
+          padding: 10px 0;
+          border-bottom: 1px solid #{$black-100--color}20;
+
+          .dashboard_statistics_list_item__title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .dashboard_statistics_list_item__icon {
+              color: #fff;
+            }
+
+          }
+
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .dashboard_cards__container {
+      flex: 1 1 45%;
+    }
+
+  }
+}

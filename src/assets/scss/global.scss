@@ -1,0 +1,41 @@
+$primary-white-600--color: #f5f6fa;
+$primary-white-300--color: #fff;
+
+$secondary-purple-600--color: #6c5ce7;
+$secondary-purple-500--color: #553bc7;
+$secondary-purple-300--color: #372b8d;
+
+$black-600--color: #002;
+$black-300--color: #2a2c2d;
+$black-100--color: #6c6c6c;
+
+$BALANCE: #3970ff;
+$RECEIVED: #079992;
+$EXPENSE: #ee5253;
+
+$icon--size: (
+  smm: 30px,
+  sm: 35px,
+  l: 40px,
+  g: 45px
+);
+
+.hidden {
+  display: none;
+}
+
+@each $key, $value in $icon--size {
+  .icon__size_#{$key} {
+    width: $value;
+    height: $value;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    justify-content: center;
+  }
+}
+
+
+.icon__redounded {
+  border-radius: 50%;
+}
